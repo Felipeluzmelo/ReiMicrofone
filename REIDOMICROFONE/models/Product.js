@@ -1,16 +1,16 @@
-const mongose = require("mongoose");
+const mongoose = require('mongoose');
 
-const productSchema = mangose.Schema({
+const productSchema = mongoose.Schema({
     name: {
         type: String,
-        require: true
+        require: true,
     },
     description: {
         type: String,
     },
     _category: {
-        type: mongose.Schema.Types.ObjectId,
-        ref:"categories",
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'categories',
     },
     image: {
         type: String,
@@ -21,5 +21,5 @@ const productSchema = mangose.Schema({
     },
 });
 
-const Product = mangose.model("categories", productSchema);
-model.exports = {Product}
+const Product = mongoose.model('categories', productSchema);
+model.exports = { Product };

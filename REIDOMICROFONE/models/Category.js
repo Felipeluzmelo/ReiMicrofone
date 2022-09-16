@@ -1,14 +1,14 @@
-const mongose = require("mongoose");
+const mongoose = require('mongoose');
 
-const categorySchema = mangose.Schema({
+const categorySchema = mongoose.Schema({
     name: {
         type: String,
-        require: true
+        require: true,
     },
-    description:{
+    description: {
         type: String,
-    }
-})
+    },
+});
 
-const Category = mangose.model("categories", categorySchema);
-model.exports = {Category}
+const Category = mongoose.model('categories', categorySchema);
+model.exports = { Category };
