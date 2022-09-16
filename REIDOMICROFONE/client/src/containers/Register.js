@@ -27,14 +27,15 @@ function Register() {
   return (
     <div className="page-wrapper">
       <Row justify="center">
-        <Col xs={24} sm={16} md={12} lg={8} xl={6} xxl={6}>
-          <h2>Register</h2>
+        <Col xs={20} sm={12} md={12} lg={14} xl={6} xxl={5}>
+          <h2 className="top-form">Register</h2>
           <Form
             form={form}
             name="register"
             layout="vertical"
             onFinish={onFinish}
             scrollToFirstError
+            className="box-form"
           >
             <Form.Item
               name="firstName"
@@ -152,7 +153,7 @@ function Register() {
               </Checkbox>
             </Form.Item>
             <Form.Item>
-              <Button type="primary" htmlType="submit">
+              <Button type="primary" htmlType="submit" block>
                 Register
               </Button>
             </Form.Item>

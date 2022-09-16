@@ -1,4 +1,4 @@
-import { Button, Col, Form, Input, message, Row } from "antd";
+import { Button, Col, Form, Input, message, Row, Divider } from "antd";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
@@ -20,11 +20,12 @@ function Login() {
       }
     });
   };
+
   return (
     <div className="page-wrapper">
       <Row justify="center">
-        <Col xs={24} sm={16} md={12} lg={8} xl={6} xxl={6}>
-          <h2>Login</h2>
+        <Col xs={20} sm={12} md={12} lg={14} xl={6} xxl={5}>
+          <h2 className="top-form">Login</h2>
           <Form
             form={form}
             name="register"
@@ -32,6 +33,7 @@ function Login() {
             autoComplete="off"
             onFinish={onFinish}
             scrollToFirstError
+            className="box-form"
           >
             <Form.Item
               name="email"
@@ -62,19 +64,21 @@ function Login() {
               hasFeedback
             >
               <Input.Password />
+              <Link to="/forgotPassword" className="forgot-password">Forgot Password</Link>
             </Form.Item>
 
             <Form.Item>
-              <Link to="/forgotPassword">Forgot Password</Link>
-              <Link to="/register" style={{ float: "right" }}>
-                Create new account
-              </Link>
-            </Form.Item>
-
-            <Form.Item>
-              <Button type="primary" htmlType="submit">
+              <Button type="primary" htmlType="submit" block>
                 Login
               </Button>
+            </Form.Item>
+
+            <Form.Item>
+              <Divider orientation="center">
+                <Link to="/register">
+                  Create account
+                </Link>
+              </Divider>
             </Form.Item>
           </Form>
         </Col>

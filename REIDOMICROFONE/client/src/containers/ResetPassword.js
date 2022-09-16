@@ -22,13 +22,14 @@ function ResetPassword() {
   return (
     <div className="page-wrapper">
       <Row justify="center">
-      <Col xs={24} sm={16} md={12} lg={8} xl={6} xxl={6}>
+      <Col xs={20} sm={12} md={12} lg={14} xl={6} xxl={5}>
         <h2>Reset Password</h2>
         <Form
           form={form}
           name="resetPassword"
           layout="vertical"
           onFinish={onFinish}
+          className="box-form"
           scrollToFirstError
         >
           <Form.Item

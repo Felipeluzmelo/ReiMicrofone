@@ -20,8 +20,8 @@ function ForgotPassord() {
   return (
     <div className="page-wrapper">
       <Row justify="center">
-        <Col xs={24} sm={16} md={12} lg={8} xl={6} xxl={6}>
-          <h2>Forgot Password</h2>
+        <Col xs={20} sm={12} md={12} lg={14} xl={6} xxl={5}>
+          <h2 className="top-form">Forgot Password</h2>
           <Form
             form={form}
             name="forgotPassword"
@@ -29,6 +29,7 @@ function ForgotPassord() {
             autoComplete="off"
             onFinish={onFinish}
             scrollToFirstError
+            className="box-form"
           >
             <Form.Item
               name="email"
@@ -48,7 +49,7 @@ function ForgotPassord() {
             </Form.Item>
 
             <Form.Item>
-              <Button type="primary" htmlType="submit">
+              <Button type="primary" htmlType="submit" block>
                 Send Reset Password Link
               </Button>
             </Form.Item>

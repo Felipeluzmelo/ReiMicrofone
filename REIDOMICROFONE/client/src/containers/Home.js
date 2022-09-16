@@ -1,18 +1,11 @@
-import { Carousel, Row, Col, Card, Space, Typography } from 'antd'
-import { EyeOutlined, ShoppingCartOutlined } from "@ant-design/icons"
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import useProducts from '../_actions/productActions'
-import Image1 from "../assets/images/Image1"
-import Image2 from "../assets/images/Image2"
+import { Row, Col, Card, Space, Typography } from 'antd';
+import { EyeOutlined, ShoppingCartOutlined } from "@ant-design/icons";
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import useProducts from '../_actions/productActions';
+import Carousel from "../utility/Carousel"
 
-const contentStyle = {
-    width: "100%",
-    color: "#fff",
-    lineHeigth: "160px",
-    textAlign: "center",
-    background: "#364d79"
-};
+
 
 const { Text } = Typography;
 
@@ -24,19 +17,6 @@ function Home() {
     useEffect(() => {
         getProductList()
     }, [])
-
-    function renderSlider() {
-        return (
-            <Carousel autoplay>
-                <div>
-                    <image src={Image1} style={contentStyle} />
-                </div>
-                <div>
-                    <image src={Image2} style={contentStyle} />
-                </div>
-            </Carousel>
-        )
-    }
 
     const renderProductList = () => {
         return (
@@ -69,10 +49,13 @@ function Home() {
     }
 
     return (
-        <div>
-            {renderSlider()}
-            {renderProductList()}
-        </div>
+
+        <Carousel />
+
+
+        // <div>
+        //     {renderProductList()}
+        // </div>
     )
 }
 
