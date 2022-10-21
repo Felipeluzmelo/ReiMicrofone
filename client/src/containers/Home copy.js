@@ -21,6 +21,15 @@ function Home() {
     }, [])
 
 
+    // const data = {
+    //     product_name: name,
+    //     product_reference: reference,
+    // }
+    
+
+
+
+
     return (
 
         <Space
@@ -37,14 +46,14 @@ function Home() {
                 wrap
                 style={{
                     padding: 0,
+                    border: 'red 1px solid',
                     paddingLeft: '1.5%',
                     paddingRight: '1.5%',
                 }}>
 
-                {products.map((row) => (
+                {new Array(12).fill(products).map((_, index) => (
 
                     <Card
-                        id= {row._id}
                         style={{
                             width: 300,
                         }}
@@ -56,7 +65,7 @@ function Home() {
                         }
 
                         actions={[
-                            `R$ ${row.product_price.toFixed(2)}`,
+                            "R$ 29,90",
                             <InputNumber min={0} defaultValue={0} />,
                             <Button type="primary" shape="round" icon={<PlusCircleFilled />} >
                                 Add
@@ -64,8 +73,10 @@ function Home() {
                         ]}>
 
                         <Meta
-                            title={row.product_name}
-                            description={row.product_brand + " - " + row.product_reference}
+                            title = {product_name}
+                            // description = {setReference}
+                            // title="Card title"
+                            description="This is the description"
                         />
                     </Card>
                 ))}
